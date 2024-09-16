@@ -1,0 +1,303 @@
+# Website information
+site_name: Rasa Pro 中文文档
+site_url: https://rasa-pro.leovan.tech
+site_author: 范叶亮 | Leo Van
+site_description: Rasa Pro 中文文档
+
+# Repository
+repo_name: leovan/rasa-pro-doc
+repo_url: https://github.com/leovan/rasa-pro-doc
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: 版权所有 &copy; 2024，<a href="https://leovan.me" target="_blank">范叶亮 | Leo Van</a>
+
+# Navigation
+nav:
+  - 简介: index.md
+  - 入门:
+    - 带语言模型的对话式 AI: calm.md
+    - 安装:
+      - 快速入门: installation/quickstart.md
+      - Python 环境: installation/python/environment-set-up.md
+      - 本地开发安装: installation/python/installation.md
+      - 许可: installation/python/licensing.md
+      - 使用 Docker: installation/docker/docker.md
+      - 故障排除: installation/troubleshooting.md
+    - 教程: tutorial.md
+    - 开发者版本: developer-edition.md
+    - 命令行界面: command-line-interface.md
+  - 关键概念:
+    - 业务逻辑:
+      - 流: concepts/flows.md
+      - 条件: concepts/conditions.md
+      - 启动流: concepts/starting-flows.md
+      - 共存: concepts/business-logic/coexistence.md
+    - 对话理解: concepts/dialogue-understanding.md
+    - 领域: concepts/domain.md
+    - 事件: concepts/events.md
+    - 对话修复: concepts/conversation-repair.md
+    - 动作:
+      - 概述: concepts/actions.md
+      - 自定义动作: concepts/custom-actions.md
+      - 默认动作: concepts/default-actions.md
+    - 响应:
+      - 概述: concepts/responses.md
+      - 上下文响应改写器: concepts/contextual-response-rephraser.md
+    - 组件:
+      - 配置: concepts/components/overview.md
+      - LLM 配置: concepts/components/llm-configuration.md
+      - 自定义图组件: concepts/components/custom-graph-components.md
+      - 自定义 LLM 组件: concepts/components/llm-custom.md
+      - 图配方: concepts/components/graph-recipe.md
+      - 共存路由器: concepts/components/coexistence-routers.md
+      - LLM 命令生成器: concepts/components/llm-command-generators.md
+      - NLU 命令适配器: concepts/components/nlu-command-adapter.md
+    - 策略:
+      - 策略概述: concepts/policies/policy-overview.md
+      - 流策略: concepts/policies/flow-policy.md
+      - 无意图策略: concepts/policies/intentless-policy.md
+      - 企业搜索策略:
+        - 概述: concepts/policies/enterprise-search-policy.md
+        - 自定义信息检索: concepts/policies/custom-information-retrievers.md
+    - 基于 NLU 的对话机器人:
+      - 对话模式:
+        - 闲聊和 FAQ: nlu-based-assistants/chitchat-faqs.md
+        - 处理业务逻辑: nlu-based-assistants/business-logic.md
+        - 回退和移交人工: nlu-based-assistants/fallback-handoff.md
+        - 处理非预期输入: nlu-based-assistants/unexpected-input.md
+        - 上下文对话: nlu-based-assistants/contextual-conversations.md
+        - 触达用户: nlu-based-assistants/reaching-out-to-user.md
+      - 动作:
+        - 概述: nlu-based-assistants/actions.md
+        - 默认动作: nlu-based-assistants/default-actions.md
+        - 槽验证动作: nlu-based-assistants/slot-validation-actions.md
+      - 配置:
+        - 概述: nlu-based-assistants/model-configuration.md
+        - 组件: nlu-based-assistants/components.md
+        - 策略: nlu-based-assistants/policies.md
+        - 语言支持: nlu-based-assistants/language-support.md
+      - 领域: nlu-based-assistants/domain.md
+      - 规则: nlu-based-assistants/rules.md
+      - 故事: nlu-based-assistants/stories.md
+      - 表单: nlu-based-assistants/forms.md
+      - 训练数据格式: nlu-based-assistants/training-data-format.md
+      - NLU 训练数据: nlu-based-assistants/nlu-training-data.md
+      - NLU 模型调优: nlu-based-assistants/tuning-your-model.md
+      - 测试对话机器人: nlu-based-assistants/testing-your-assistant.md
+      - 仅使用 NLU: nlu-based-assistants/nlu-only.md
+      - 仅 NLU 服务器: nlu-based-assistants/nlu-only-server.md
+  - 构建对话机器人:
+    - CALM 思维: building-assistants/thinking-calmly.md
+    - 验证槽值: building-assistants/validating-slot-values.md
+    - 使用文本文档进行聊天: building-assistants/chat-with-your-docs.md
+    - 开始对话: building-assistants/bot-starts-conversation.md
+    - 用户满意度调查: building-assistants/user-satisfaction-survey.md
+    - 将基于 NLU 的对话机器人迁移到 CALM: building-assistants/coexistence.md
+    - 为命令生成微调和自托管 LLM: building-assistants/fine-tuning-recipe.md
+    - 整合:
+      - 频道连接器:
+        - 连接至频道: connectors/messaging-and-voice-channels.md
+        - 个人网站: connectors/your-own-website.md
+        - 文本和聊天:
+          - Facebook Messenger: connectors/facebook-messenger.md
+          - Slack: connectors/slack.md
+          - Telegram: connectors/telegram.md
+          - Twilio: connectors/twilio.md
+          - Google Hangouts Chat: connectors/hangouts.md
+          - Microsoft Bot Framework: connectors/microsoft-bot-framework.md
+          - Cisco Webex Teams: connectors/cisco-webex-teams.md
+          - RocketChat: connectors/rocketchat.md
+          - Mattermost: connectors/mattermost.md
+        - 语音:
+          - Audiocodes VoiceAI Connect: connectors/audiocodes-voiceai-connect.md
+          - Jambonz: connectors/jambonz.md
+          - Twilio Voice: connectors/twilio-voice.md
+        - 自定义连接器: connectors/custom-connectors.md
+      - 动作服务器:
+        - 简介: action-server.md
+        - 动作服务器基础:
+          - 动作: action-server/actions.md
+          - 事件: action-server/events.md
+        - 使用 Rasa SDK:
+          - 运行一个 Rasa SDK 服务器: action-server/running-action-server.md
+          - 编写自定义动作:
+            - 动作: action-server/sdk-actions.md
+            - 追踪器: action-server/sdk-tracker.md
+            - 分发器: action-server/sdk-dispatcher.md
+            - 事件: action-server/sdk-events.md
+            - 特殊动作类型:
+              - 知识库动作: action-server/knowledge-bases.md
+              - 槽验证动作: action-server/validation-action.md
+          - Sanic 扩展: action-server/sanic-extensions.md
+          - Rasa 动作服务器 gRPC API: action-server/action-server-grpc-api.md
+      - NLG 服务器: production/nlg.md
+      - REST API: production/rest-api.md
+  - 测试对话机器人:
+    - Rasa 检查: production/inspect-assistant.md
+    - 数据验证和端到端测试: production/testing-your-assistant.md
+    - 端到端测试转换: testing/e2e-test-conversion.md
+    - 使用断言进行端到端测试:
+      - 简介: testing/e2e-testing-assertions/assertions-introduction.md
+      - 安装先决条件: testing/e2e-testing-assertions/assertions-installation.md
+      - 如何使用断言进行端到端测试: testing/e2e-testing-assertions/assertions-how-to-guide.md
+      - 断言基础知识: testing/e2e-testing-assertions/assertions-fundamentals.md
+    - 负载测试指南: production/load-testing-guidelines.md
+  - 部署对话机器人:
+    - 简介: deploy/introduction.md
+    - Rasa Pro 架构:
+      - 概述: production/arch-overview.md
+      - 模型存储: production/model-storage.md
+      - 锁存储: production/lock-stores.md
+      - 追踪器存储: production/tracker-stores.md
+      - 事件代理: production/event-brokers.md
+      - 密钥管理: production/secrets-managers.md
+    - 部署到 Kubernetes:
+      - Kubernetes/OpenShift 集群: production/cluster-requirements.md
+      - Rasa Pro Helm Chart: production/rasa-pro-helm-chart.md
+      - 部署 Rasa Pro: deploy/deploy-rasa.md
+      - 模型存储桶: deploy/deploy-load-model.md
+      - 部署动作服务器: deploy/deploy-action-server.md
+      - 部署 Rasa Pro 服务: deploy/deploy-rasa-pro-services.md
+      - 添加环境变量: deploy/environment-variables.md
+    - 设置 CI/CD: production/setting-up-ci-cd.md
+    - 部署微调模型: deploy/deploy-fine-tuned-model.md
+  - 安全与合规:
+    - 个人身份信息管理: security/pii-management.md
+  - 大规模运营:
+    - 分析:
+      - 开始使用: operating/analytics/getting-started-with-analytics.md
+      - 实时标记分析: operating/analytics/realtime-markers.md
+      - 示例查询: operating/analytics/example-queries.md
+      - 数据结构参考: operating/analytics/data-structure-reference.md
+    - 追踪: operating/tracing.md
+    - 指标: operating/metrics.md
+    - 空间: operating/spaces.md
+    - 微调配方: operating/fine-tuning-recipe.md
+  - 参考:
+    - Rasa 词汇表: nlu-based-assistants/glossary.md
+    - Rasa 遥测: telemetry/telemetry.md
+    - 遥测事件参考: telemetry/reference.md
+    - 许可和通知: license.md
+  - 更新日志:
+    - Rasa Pro 变更日志: rasa-pro-changelog.md
+    - Rasa Pro 服务变更日志: rasa-pro-services-changelog.md
+    - Rasa SDK 变更日志: sdk-changelog.md
+    - 兼容性矩阵: compatibility-matrix.md
+    - 版本迁移指南: migration-guide.md
+    - 活跃维护版本: rasa-product-release-and-maintenance-policy.md
+  - API 规范页面:
+    - Rasa HTTP API: pages/http-api.md
+    - Rasa 动作服务器 API: pages/action-server-api.md
+
+# Theme
+theme:
+  name: material
+  custom_dir: overrides
+  include_search_page: false
+  search_index_only: true
+  language: zh
+  features:
+    - content.code.copy
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: 暗黑
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/white-balance-sunny
+        name: 明亮
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: images/favicon.ico
+  logo: images/rasa-icon-horizontal.svg
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+
+# Extra
+extra:
+  social:
+    - icon: material/home
+      link: https://leovan.me
+      name: 个人主页
+    - icon: material/github
+      link: https://github.com/leovan
+      name: Github
+  analytics:
+    provider: google
+    property: G-3BZX9BJSWS
+extra_css:
+  - css/button.css
+  - css/chat.css
+  - css/image.css
+  - css/table.css
+extra_javascript:
+  - js/math.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Markdown extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      user: leovan
+      repo: rasa-doc-pro
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

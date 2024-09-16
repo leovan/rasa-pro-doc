@@ -1,0 +1,149 @@
+Table rasa_session {
+  id char [primary key]
+  sender_id char [ref: - rasa_sender.id]
+  timestamp timestamp
+  start_sequence_number integer
+  end_sequence_number integer
+}
+
+Table rasa_event {
+  id char [primary key]
+  raw_event_id char
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  timestamp timestamp
+  event_type varchar
+  environment varchar
+  model_id varchar
+  sequence_number integer
+}
+
+Table rasa_sender {
+  id char [primary key]
+  sender_key varchar
+  channel varchar
+  first_seen timestamp
+  last_seen timestamp
+}
+
+Table rasa_bot_message {
+  id char [primary key]
+  event_id char [ref: - rasa_event.id]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  template_name varchar
+  text varchar
+  timestamp timestamp
+  sequence_number integer
+  model_id varchar
+}
+
+Table rasa_user_message {
+  id char [primary key]
+  event_id char [ref: - rasa_event.id]
+  sender_id char [ref: - rasa_sender.id]
+  session_id chart [ref: - rasa_session.id]
+  timestamp timestamp
+  sequence_number integer
+  model_id varchar
+  intent varchar
+  retrieval_intent varchar
+  confidence float
+  text varchar
+  message_id varchar
+}
+
+Table rasa_llm_command {
+  id char [primary key]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  user_message_id varchar [ref: - rasa_user_message.message_id]
+  command varchar
+  inserted_at timestamp
+  flow_identifier varchar
+  set_slot_name varchar
+  clarification_options varchar
+}
+
+Table rasa_action {
+  id char [primary key]
+  event_id char [ref: - rasa_event.id]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  timestamp timestamp
+  sequence_number integer
+  model_id varchar
+  name varchar
+  confidence float
+  policy varchar
+}
+
+Table rasa_slot {
+  id char [primary key]
+  event_id char [ref: - rasa_event.id]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  timestamp timestamp
+  sequence_number integer
+  slot_path varchar
+  name varchar
+  value varchar
+}
+
+Table rasa_session_slot_state {
+  id char [primary key]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  timestamp timestamp
+  name varchar
+  value varchar
+}
+
+Table rasa_turn {
+  id char [primary key]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  start_sequence_number integer
+  end_sequence_number integer
+}
+
+Table rasa_dialogue_stack_frame {
+  id char [primary key]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  start_sequence_number integer
+  end_sequence_number integer
+  active_flow_identifier varchar
+  flow_step_id varchar
+  inserted_at timestamp
+}
+
+Table rasa_flow_status {
+  id char [primary key]
+  sender_id char [ref: - rasa_sender.id]
+  session_id char [ref: - rasa_session.id]
+  flow_identifier varchar
+  flow_status varchar
+  step_id varchar
+  inserted_at timestamp
+}
+
+Table rasa_pattern {
+  id char [primary key]
+  name varchar
+  description varchar
+  config varchar
+  is_active boolean
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table rasa_marker {
+  id char [primary key]
+  pattern_id char [ref: - rasa_pattern.id]
+  session_id char [ref: - rasa_session.id]
+  sender_id char [ref: - rasa_sender.id]
+  event_id char [ref: - rasa_event.id]
+  num_preceding_user_turns integer
+  created_at timestamp
+}
